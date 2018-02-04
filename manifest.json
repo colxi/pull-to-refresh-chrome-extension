@@ -1,0 +1,30 @@
+{
+    "name"          : "Pull to refresh",
+    "version"       : "1.0.1",
+    "description"   : "Pull gesture implementation ( & mouse wheel overscroll ) to reload the current webpage.",
+    "content_scripts": [
+        {
+            "matches"           : [
+                "http://*/*",
+                "https://*/*",
+                "*://*/*"
+            ],
+            "js"                : [ "content_script.js" ],
+            "css"               : [ "css/styles.css" ],
+            "match_about_blank" : true,
+            "run_at"            : "document_start"
+        }
+    ],
+    "permissions": [
+        "tabs",
+        "https://maps.google.com/*",
+        "https://maps.googleapis.com/*"
+    ],
+    "permissions": [
+	    "https://*/*",
+	    "http://*/*",
+	    "tabs"
+  	],
+    "icons": { "128": "icon.png" },
+    "manifest_version": 2
+}

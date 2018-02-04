@@ -1,0 +1,36 @@
+/*
+* @Author: colxi
+* @Date:   2018-01-25 04:18:35
+* @Last Modified by:   colxi
+* @Last Modified time: 2018-02-04 00:38:05
+*/
+body{
+	width: intrinsic;           /* Safari/WebKit uses a non-standard name */
+  	width: -moz-max-content;    /* Firefox/Gecko */
+  	width: -webkit-max-content; /* Chrome */
+}
+#reload_chrome_ext{
+	top:-50px;
+	background-color: white;
+	padding:5px;
+	width: 25px  		!important;
+	height: 25px 		!important;
+	border-radius: 50px !important;
+	position: absolute  !important;
+	margin-left: 45%  	!important;
+	box-shadow:0 0 10px grey  	!important;
+	z-index:999999  	!important;
+    box-sizing: content-box 	!important;
+}
+#reload_chrome_ext img {
+	width: 100%;
+	transform: rotate(45deg);
+	opacity:.5;
+}
+#reload_chrome_ext[reloading_chrome_ext]{
+	transition: top 1s, background-color 2s, transform 20s, padding 1s;
+	background-color: black;
+	transform: rotate(8000deg) !important;
+	padding:9px
+}
+#reload_chrome_ext[reloading_chrome_ext] img{ filter: invert(100%); }
