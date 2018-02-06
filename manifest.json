@@ -1,7 +1,7 @@
 {
     "name"          : "Pull to refresh",
-    "version"       : "1.0.1",
-    "description"   : "Pull gesture implementation ( & mouse wheel overscroll ) to reload the current webpage.",
+    "version"       : "1.0.2 ",
+    "description"   : "Pull down gesture implementation ( touch / mousewheel / trackpad ) to reload the current webpage.",
     "content_scripts": [
         {
             "matches"           : [
