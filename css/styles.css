@@ -2,11 +2,9 @@
 * @Author: colxi
 * @Date:   2018-01-25 04:18:35
 * @Last Modified by:   colxi
-* @Last Modified time: 2018-02-04 20:23:29
+* @Last Modified time: 2018-02-16 21:46:57
 */
-body{
-	min-width: 100%;
-}
+
 #reload_chrome_ext{
 	top:-50px;
 	background-color: white;

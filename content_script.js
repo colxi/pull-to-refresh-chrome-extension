@@ -2,13 +2,13 @@
 * @Author: colxi
 * @Date:   2018-01-25 04:28:49
 * @Last Modified by:   colxi
-* @Last Modified time: 2018-02-03 15:23:58
+* @Last Modified time: 2018-02-16 21:58:03
 */
 //
 // pull-to-refresh
 //
 
-console.log('injected', document.readyState);
+//console.log('injected', document.readyState);
 
 document.addEventListener("DOMContentLoaded", function(event) {
 	//
@@ -22,12 +22,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	div.appendChild(img);
 	document.body.appendChild(div);
 
-	console.log('injected DOMContentLoaded');
+	//console.log('injected DOMContentLoaded');
 
-	var timeout = 2;
-	let touchstartX = 0;
-	let touchstartY = 0;
-	let themeBaseColor ='#f50057';
+	var DEBUG 			= true;
+	var timeout 		= 2;
+	let touchstartX 	= 0;
+	let touchstartY 	= 0;
+	let themeBaseColor  = '#f50057';
 
 	//bgestures navigation
 	var gestures = {
@@ -40,6 +41,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		actionAmmount : 0,
 		timeoutCountdown : 100,
 		timeoutWatcher : null,
+		log : function(msg){
+			if(DEBUG) console.log(msg);
+			return true;
+		},
 		getDirection: function(e){
 			// Detectmdirection in both e.type cases ( wheel  touchmove )
 			let direction = '';
@@ -52,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			 		direction = touchstartX - e.touches[0].screenX < 0 ? 'left' : 'right';
 				}else direction = touchstartY - e.touches[0].screenY < 0 ? 'up' : 'down';
 			}
-			console.log(direction);
+			//gestures.log(direction);
 			return direction;
 		},
 		getDOMElementPosition : function(){
@@ -60,11 +65,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		},
 		timeoutCheck: function(){
 			if( gestures.timeoutWatcher === null){
-				console.log('timeout countdown creqteed')
+				gestures.log('timeout countdown createed')
 				gestures.timeoutWatcher	= setInterval( function(){
 
 					if( gestures.getDOMElementPosition() < -50 ){
-						console.log('timeout countdown destroyed')
+						gestures.log('timeout countdown destroyed')
 					 	clearInterval(gestures.timeoutWatcher);
 					 	gestures.timeoutWatcher = null;
 						return;
@@ -100,7 +105,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					gestures.actionAmmount = 90;
 					gestures.render();
 					gestures.DOMElement.setAttribute('reloading_chrome_ext','true');
-					console.log('timeout countdown destroyed');
 					setTimeout( function(){ location.reload(); }, 2000);
 					clearInterval(gestures.timeoutWatcher);
 					return 'RELOADIND_PAGE';
