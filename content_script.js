@@ -2,7 +2,7 @@
 * @Author: colxi
 * @Date:   2018-01-25 04:28:49
 * @Last Modified by:   colxi
-* @Last Modified time: 2018-02-16 21:58:03
+* @Last Modified time: 2018-02-16 23:03:15
 */
 //
 // pull-to-refresh
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 	//console.log('injected DOMContentLoaded');
 
-	var DEBUG 			= true;
+	var DEBUG 			= false;
 	var timeout 		= 2;
 	let touchstartX 	= 0;
 	let touchstartY 	= 0;
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		},
 		actionAmmountLimit: 120,
 		actionAmmount : 0,
-		timeoutCountdown : 100,
+		timeoutCountdown : timeout,
 		timeoutWatcher : null,
 		log : function(msg){
 			if(DEBUG) console.log(msg);
