@@ -1,0 +1,23 @@
+{
+  "name": "pull-to-refresh-chrome-extension",
+  "version": "1.0.8",
+  "description": "pull to refresh  chrome extension",
+  "main": ".src/test.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "bestzip dist/pull-to-refresh-chrome-extension.zip src/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/colxi/pull-to-refresh-chrome-extension.git"
+  },
+  "author": "colxi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/colxi/pull-to-refresh-chrome-extension/issues"
+  },
+  "homepage": "https://github.com/colxi/pull-to-refresh-chrome-extension#readme",
+  "devDependencies": {
+    "bestzip": "^2.1.5"
+  }
+}
