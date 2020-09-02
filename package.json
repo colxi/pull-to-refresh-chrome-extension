@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/colxi/pull-to-refresh-chrome-extension#readme",
   "devDependencies": {
-    "bestzip": "^2.1.5"
+    "bestzip": "^2.1.7"
   }
 }
